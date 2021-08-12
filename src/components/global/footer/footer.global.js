@@ -4,7 +4,9 @@ import Styles from "./footer.styles"
 const Footer = () => {
     return (
         <Styles>
-            footer
+            <div className="container">
+                Designed and Developed By Manik Dhanjal
+            </div>
         </Styles>
     )
 }

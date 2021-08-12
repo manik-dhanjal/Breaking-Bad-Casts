@@ -8,6 +8,7 @@ export default styled.div`
         width:100%;
         height:100%;
         overflow:hidden;
+        background:grey;
         img{
             width:100%;
             height:100%;
@@ -77,6 +78,3 @@ export default styled.div`
     }
 `
 
-export const Details = styled.div`
-  
-`

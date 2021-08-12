@@ -1,5 +1,5 @@
 import React from 'react'
-import Styles,{Details} from "./character-card.styles"
+import Styles from "./character-card.styles"
 import {Link} from "react-router-dom"
 
 const CharacterCard = ({data}) => {
@@ -30,7 +30,7 @@ const CharacterCard = ({data}) => {
                             </li>
                             <li id="occupation">
                                 <span className="head">Occupation:</span>
-                                <span className = "value">{occupation.toString()}</span>
+                                <span className = "value">{occupation.toString().replace(/,/g,", ")}</span>
                             </li>
                         </ul>
                     </div>

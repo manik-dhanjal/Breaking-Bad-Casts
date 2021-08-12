@@ -5,6 +5,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 width:100%;
+background:white;
 input{
     border:none;
     border-radius:0;
