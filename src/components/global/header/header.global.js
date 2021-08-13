@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from "./header.styles"
 import {Link} from "react-router-dom"
-
+import resume from "../../../assets/pdf/resume.pdf"
 import logoWhite from "../../../assets/images/logo-white.png"
 
 import SearchBox  from '../../atom/search-box/search-box.atom'
@@ -20,7 +20,7 @@ const Header = () => {
                     <SearchBox placeholder="Find your Character..."/>
                 </div>
                 <div id="resume-btn">
-                    <Button>
+                    <Button href={resume} target="_blank" download={true}>
                         Resume
                     </Button>
                 </div>
