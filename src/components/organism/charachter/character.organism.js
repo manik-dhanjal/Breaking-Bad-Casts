@@ -1,12 +1,18 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
 import Styles,{Image,Details,Scroller} from "./character.styles"
+import ErrorMsg from '../../molecules/error-message/error-message.molecules';
 
 
-const getCaracter = async (author,quotes,setQuotes) => {
+const getCaracter = async (author,setQuotes) => {
 
     try{
         if(!author) return 0;
+        setQuotes({
+            status:"pending",
+            data:[],
+            message:""
+        })
         const response = await axios.get(`/quote?author=${author.replace(/\s/g,"+")}`)
         console.log(response.data)
         setQuotes({
@@ -33,7 +39,7 @@ const Character = ({data}) => {
         message:""
     });
     useEffect(() => {
-      getCaracter(data.name,quotes,setQuotes)
+      getCaracter(data.name,setQuotes)
     }, [])
     
     return (
@@ -85,9 +91,10 @@ const Character = ({data}) => {
                    </div>
                    {
                         quotes.status==="pending"?
-                            <div>Loading...</div>
+                            <div>Loading quotes...</div>
                             :(
-                                quotes.status === "success"?
+                                quotes.status === "success"?(
+                                    quotes.data.length?
                                     <Scroller>
                                         <ol className="content">
                                             {
@@ -98,8 +105,13 @@ const Character = ({data}) => {
                                                 )
                                             }
                                         </ol>
-                                    </Scroller>   
-                                    :<div className="error">not found</div>
+                                    </Scroller>  
+                                    : 
+                                    <div className="404-quotes">
+                                       Oops, This character do not have any quotes ¯\_(ツ)_/¯.
+                                    </div>
+                                ) 
+                                :<ErrorMsg  handleTryAgain={() => getCaracter(data.name,setQuotes)}/>
                             )
                     }
                     

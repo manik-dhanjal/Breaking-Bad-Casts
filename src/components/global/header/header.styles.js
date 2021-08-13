@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export default styled.header`
 background:black;
-border-bottom:1px solid white;
 .container{
     display:grid;
     grid-template-columns:1fr 3fr 1fr;

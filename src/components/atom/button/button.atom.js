@@ -1,10 +1,18 @@
 import React from 'react'
 import Styles from "./button.styles"
-
-const Button = ({children,onClick}) => {
+import {Link} from "react-router-dom"
+const Button = ({children,onClick,href}) => {
     return (
-        <Styles>
-            <button onClick={onClick}>{children}</button>
+        <Styles className='button'>
+            {
+                href?
+                <Link to={href} id='link-btn'>
+                    {children}
+                </Link>
+                :<button onClick={onClick}>{children}</button> 
+            }
+
+
         </Styles>
     )
 }

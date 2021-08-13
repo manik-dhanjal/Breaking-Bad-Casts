@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default styled.footer`
 background:black;
-margin-top:60px;
+display:block;
 .container{
     max-width:1280px;
     margin:0 auto;

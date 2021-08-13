@@ -4,6 +4,7 @@ export default styled.div`
 display:flex;
 margin:50px auto;
 max-width:1024px;
+margin-bottom:0px;
 `
 
 export const Image = styled.div`
@@ -57,6 +58,7 @@ width:55%;
 export const Scroller = styled.div`
 max-height:200px;
 overflow-y:auto;
+
 .content{
     background:#181818;
     padding-left:40px;
