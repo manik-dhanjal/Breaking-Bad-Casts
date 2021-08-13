@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useCallback} from 'react'
 import Styles,{Grid} from "./character-grid.styles"
 import axios from "axios"
 import CharacterCard from '../character-card/character-card.molecules'
@@ -58,11 +58,14 @@ const CharacterGrid = ({history}) => {
             currentPage:page
         })
     }
-    const getCaracterWithQuery = () => {
+    const getCaracterWithQuery =useCallback( () => {
         let query = new URLSearchParams(history.location.search);
         getCharachters(characters,setCharacters,query.get('search'));
-    }
-    useEffect(getCaracterWithQuery,[history.location.search])
+      },[history.location.search])
+
+    useEffect(()=>{
+        getCaracterWithQuery()
+    },[getCaracterWithQuery])
 
     return (
         <Styles>
