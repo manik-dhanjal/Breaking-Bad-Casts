@@ -62,9 +62,7 @@ const CharacterGrid = ({history}) => {
         let query = new URLSearchParams(history.location.search);
         getCharachters(characters,setCharacters,query.get('search'));
     }
-    useEffect(()=>{
-        getCaracterWithQuery()
-    },[history.location.search])
+    useEffect(getCaracterWithQuery,[history.location.search])
 
     return (
         <Styles>
