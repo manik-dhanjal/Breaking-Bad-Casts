@@ -19,6 +19,7 @@ overflow:hidden;
 min-height:400px;
 max-height:70vh;
 margin-right:60px;
+background:grey;
 img{
     width:100%;
     height:100%;

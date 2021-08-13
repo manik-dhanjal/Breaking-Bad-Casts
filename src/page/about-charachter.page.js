@@ -6,7 +6,7 @@ import ErrorMsg from '../components/molecules/error-message/error-message.molecu
 import styled from 'styled-components'
 import LoadingAnimation from '../components/molecules/loading-animation/loading-animation.molecules'
 import NotFound from '../components/molecules/not-found/not-found.molecules'
-import notFoundStyles from '../components/molecules/not-found/not-found.styles'
+
 
 
 const ErrorStyles = styled.div`
@@ -58,7 +58,7 @@ const AboutCharachter = () => {
     let { id } = useParams();
     useEffect(() => {
       getCaracter(id,setCharacter)
-    }, [])
+    }, [id])
 
     return (
         <>

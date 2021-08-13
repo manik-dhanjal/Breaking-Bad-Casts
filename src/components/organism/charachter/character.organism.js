@@ -40,12 +40,12 @@ const Character = ({data}) => {
     });
     useEffect(() => {
       getCaracter(data.name,setQuotes)
-    }, [])
+    }, [data.name])
     
     return (
         <Styles>
            <Image>
-               <img src={data.img}/>
+               <img src={data.img} alt = {data.name}/>
            </Image>
            <Details>
                <div className="head">
