@@ -18,4 +18,13 @@ export const Grid = styled.div`
         height:400px;
         width:100%;
     }
+    @media screen and (max-width:1200px){
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    @media screen and (max-width:950px){
+        grid-template-columns:1fr 1fr;
+    }
+    @media screen and (max-width:600px){
+        grid-template-columns:1fr;
+    }
 `

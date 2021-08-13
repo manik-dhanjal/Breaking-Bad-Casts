@@ -6,7 +6,7 @@ import logoWhite from "../../../assets/images/logo-white.png"
 
 import SearchBox  from '../../atom/search-box/search-box.atom'
 import Button from "../../atom/button/button.atom"
-
+import resumeIcon from "../../../assets/images/resume-icon.svg"
 const Header = () => {
     return (
         <Styles>
@@ -20,6 +20,9 @@ const Header = () => {
                     <SearchBox placeholder="Find your Character..."/>
                 </div>
                 <div id="resume-btn">
+                    <Link to={resume} target="_blank" download={true} className='icon-cont'>
+                        <img src={resumeIcon} alt='download resume'/>
+                    </Link>
                     <Button href={resume} target="_blank" download={true}>
                         Resume
                     </Button>

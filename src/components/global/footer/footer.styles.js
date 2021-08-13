@@ -10,4 +10,9 @@ display:block;
     color:grey;
     font-size:0.8em;
 }
+@media screen and (max-width:720px){
+    .container{
+        padding:20px 30px;
+    }
+}
 `

@@ -8,4 +8,10 @@ export default styled.div`
         margin:50px auto;
         min-height: calc( 100vh - 55px - 74px - 100px);
     }
+    @media screen and (max-width:720px){
+        main{
+            padding:0 30px;
+            margin:30px auto;
+        }
+    }
 `
